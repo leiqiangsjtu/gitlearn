@@ -1,4 +1,5 @@
 cd /c/users/LeiQiang/Documents
+mkdir learngit
 git init
 git add readme.txt
 git commit -m "add a readme file"
@@ -17,3 +18,44 @@ git rm test.txt
 git remote add origin git@github.com:gitlearn/learngit.git
 git push -u origin master
 git push origin master
+git clone git@github.com:michaelliao/gitskills.git
+git checkout -b dev  创建并切换分支
+git branch dev
+git checkout dev
+git branch
+git checkout master
+git merge dev
+git branch -d dev
+git merge --no-ff -m "merge with no-ff" dev
+git stash    储藏工作现场
+git stash pop      恢复现场
+git stash list
+git branch -D feature-vulcan  强行销毁分支
+git remote rm origin  删除远程库
+
+多人合作：
+git checkout -b dev origin/dev
+git push origin dev
+git pull
+git branch --set-upstream dev origin/dev
+
+git tag v1.00
+git tag
+git tag v1.01 6223849
+git show v1.00
+git tag -a v1.02 -m "version 1.02 released" 72838376
+git tag -d v0.1
+git push origin v1.00
+git push origin --tags
+删除远程标签：git tag -d v0.9
+git push origin :refs/tags/v1.00
+
+.gitignore
+text.txt
+*.py
+
+git config --global color.ui ture
+git config --global alias.st status
+cat .git/config  仓库配置文件
+cat .gitconfig  当前用户配置文件（主目录下）
+ 
